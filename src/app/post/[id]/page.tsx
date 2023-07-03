@@ -32,6 +32,7 @@ const getPost = async (id: string) => {
 
 const Post = async ({ params }: Props) => {
   const { id } = params;
+
   const post: FormattedPost | null = await getPost(id);
 
   if (!post) {

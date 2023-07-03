@@ -1,12 +1,15 @@
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
 import SocialLinks from './SocialLinks';
 import Ad1 from '/public/assets/ad-1.jpg';
+import { useSession } from 'next-auth/react';
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const { data: session } = useSession();
   return (
     <header className="mb-5">
       <nav className="flex justify-between items-center w-full bg-wh-900 text-wh-10 px-10 py-4">
@@ -18,8 +21,15 @@ const Navbar = (props: Props) => {
           <Link href="/">Trending</Link>
           <Link href="/">About</Link>
         </div>
-        <div>
-          <p>Sign In</p>
+        <div className="flex items-center space-x-4">
+          {session ? (
+            <>
+              <p>{session?.user?.name}</p>
+              <Link href="/api/auth/signout">Sign Out</Link>
+            </>
+          ) : (
+            <Link href="/api/auth/signin">Sign In</Link>
+          )}
         </div>
       </nav>
       <div className="flex justify-between gap-8 mt-5 mb-4 mx-10">

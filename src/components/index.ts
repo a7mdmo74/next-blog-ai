@@ -6,3 +6,4 @@ export { default as Travel } from './Travel';
 export { default as Other } from './Other';
 export { default as Subscribe } from './Subscribe';
 export { default as Sidebar } from './Sidebar';
+export { default as AuthProvider } from './Providers';

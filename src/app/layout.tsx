@@ -1,4 +1,4 @@
-import { Footer, Navbar } from '@/components';
+import { AuthProvider, Footer, Navbar } from '@/components';
 import './globals.css';
 import { Open_Sans } from 'next/font/google';
 
@@ -19,9 +19,11 @@ export default function RootLayout({
   return (
     <html className={openSans.className} lang="en">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

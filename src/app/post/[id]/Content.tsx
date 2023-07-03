@@ -62,7 +62,6 @@ const Content = ({ post }: Props) => {
     if (title === '') setTitleError('This field is required.');
     if (editor?.isEmpty) setContentError('This field is required.');
     if (title === '' || editor?.isEmpty) return;
-
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_URL}/api/post/${post?.id}`,
       {
