@@ -1,10 +1,6 @@
-import { Editor } from '@tiptap/react';
-import React from 'react';
-import { XMarkIcon, PencilSquareIcon } from '@heroicons/react/24/solid';
 import { FormattedPost } from '@/app/types';
-import { useSession } from 'next-auth/react';
-import toast, { Toaster } from 'react-hot-toast';
-import { redirect } from 'next/navigation';
+import { Editor } from '@tiptap/react';
+import { XMarkIcon, PencilSquareIcon } from '@heroicons/react/24/solid';
 
 type Props = {
   isEditable: boolean;
@@ -45,7 +41,6 @@ const CategoryAndEdit = ({
 
   return (
     <div className="flex justify-between items-center">
-      <Toaster />
       <h4 className="bg-accent-orange py-2 px-5 tex-wh-900 text-sm font-bold">
         {post.category}
       </h4>

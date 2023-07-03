@@ -1,9 +1,8 @@
-import React from 'react';
+import { prisma } from '@/app/api/client';
 import { Post as PostType } from '@prisma/client';
-import { FormattedPost } from '@/app/types';
 import Content from './Content';
 import { Sidebar } from '@/components';
-import { prisma } from '@/app/api/client';
+import { FormattedPost } from '@/app/types';
 
 type Props = {
   params: { id: string };
@@ -32,7 +31,6 @@ const getPost = async (id: string) => {
 
 const Post = async ({ params }: Props) => {
   const { id } = params;
-
   const post: FormattedPost | null = await getPost(id);
 
   if (!post) {

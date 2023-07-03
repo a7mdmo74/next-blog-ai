@@ -11,7 +11,7 @@ type Props = {
   title: string;
 };
 
-const Article = async ({
+const Article = ({
   contentError,
   editor,
   isEditable,
