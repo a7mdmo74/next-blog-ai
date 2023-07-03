@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { Configuration, CreateChatCompletionResponse, OpenAIApi } from 'openai';
-import { AxiosResponse } from 'axios';
+import { Configuration, OpenAIApi } from 'openai';
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
